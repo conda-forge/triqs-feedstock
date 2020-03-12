@@ -9,7 +9,7 @@ source:
   sha256: 523d60a98af0c07e972338f3a5f07d7ea1232d6e67b0f063e139d986f09b9864
 
 build:
-  number: 3
+  number: 4
   skip: True  # [win or py>30]
   merge_build_host: True
 
@@ -42,13 +42,14 @@ requirements:
     - gmp
     - hdf5
     - h5py
-    - libclang
-    - matplotlib-base
+    - mako
     - mpi4py
     - {{ pin_compatible("numpy") }}
     - openmpi
     - python
     - scipy
+    - matplotlib-base
+    - libclang
     - zlib
     - {{ compiler('cxx') }}
 
