@@ -1,5 +1,7 @@
 {% set version = "2.2.2" %}
 
+{% set mpi_prefix = "mpi_" + mpi %}
+
 package:
   name: triqs
   version: {{ version }}
@@ -9,7 +11,7 @@ source:
   sha256: b7fc1f22aca3dc8f353c3aee416c20d1d4991d42b008b257d0290690da39d5ad
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win or py>30]
   merge_build_host: True
 
@@ -23,8 +25,10 @@ requirements:
   host:
     - boost-cpp
     - fftw
+    - fftw * {{ mpi_prefix }}_*
     - gmp
     - hdf5
+    - hdf5 * {{ mpi_prefix }}_*
     - h5py
     - mako
     - mpi4py
@@ -38,8 +42,10 @@ requirements:
     - zlib
   run:
     - fftw
+    - fftw * {{ mpi_prefix }}_*
     - gmp
     - hdf5
+    - hdf5 * {{ mpi_prefix }}_*
     - h5py
     - mako
     - mpi4py
@@ -58,7 +64,7 @@ test:
 
 about:
   home: https://triqs.github.io
-  license: GPLv3
+  license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE.txt
   summary: 'Toolbox for Research on Interacting Quantum Systems'
