@@ -9,7 +9,7 @@ source:
   sha256: b7fc1f22aca3dc8f353c3aee416c20d1d4991d42b008b257d0290690da39d5ad
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win or py>30]
   merge_build_host: True
 
@@ -29,7 +29,7 @@ requirements:
     - mako
     - mpi4py
     - numpy  1.14
-    - openmpi
+    - {{ mpi }}
     - python
     - scipy
     - libblas
@@ -44,7 +44,7 @@ requirements:
     - mako
     - mpi4py
     - {{ pin_compatible("numpy") }}
-    - openmpi
+    - {{ mpi }}
     - python
     - scipy
     - matplotlib-base
