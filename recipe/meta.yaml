@@ -41,6 +41,7 @@ requirements:
     - libclang
     - zlib
   run:
+    - boost-cpp
     - fftw
     - fftw * {{ mpi_prefix }}_*
     - gmp
