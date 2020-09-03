@@ -60,7 +60,7 @@ requirements:
 
 test:
   imports:
-    - pytriqs
+    - triqs
 
 about:
   home: https://triqs.github.io
