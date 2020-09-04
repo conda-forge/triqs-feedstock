@@ -1,5 +1,5 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
+- '10.14'
 boost_cpp:
 - '1.72'
 c_compiler:
@@ -26,8 +26,6 @@ liblapack:
 - 3.8.0 *netlib
 macos_machine:
 - x86_64-apple-darwin13.4.0
-macos_min_version:
-- '10.9'
 mpi:
 - mpich
 numpy:
