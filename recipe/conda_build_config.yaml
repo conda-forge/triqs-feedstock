@@ -1,5 +1,3 @@
 mpi:
   - mpich
   - openmpi
-MACOSX_DEPLOYMENT_TARGET:  # [osx]
-  - 10.14                  # [osx]

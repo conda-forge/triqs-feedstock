@@ -10,6 +10,7 @@ export OMPI_MCA_rmaps_base_oversubscribe=yes
 export OMPI_MCA_btl_vader_single_copy_mechanism=none
 mpiexec="mpiexec --allow-run-as-root"
 
+export CXXFLAGS="$CXXFLAGS -D_LIBCPP_DISABLE_AVAILABILITY"
 cmake \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DBLAS_LIBRARIES=$PREFIX/lib/libblas${SHLIB_EXT} \
