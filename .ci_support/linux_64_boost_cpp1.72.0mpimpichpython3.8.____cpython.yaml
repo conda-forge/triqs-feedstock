@@ -1,5 +1,5 @@
 boost_cpp:
-- '1.72'
+- 1.72.0
 c_compiler:
 - gcc
 c_compiler_version:
@@ -25,7 +25,7 @@ libblas:
 liblapack:
 - 3.8.0 *netlib
 mpi:
-- openmpi
+- mpich
 numpy:
 - '1.16'
 pin_run_as_build:
