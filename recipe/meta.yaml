@@ -1,4 +1,4 @@
-{% set version = "2.2.3" %}
+{% set version = "3.0.0" %}
 
 {% set mpi_prefix = "mpi_" + mpi %}
 
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://github.com/TRIQS/triqs/releases/download/{{ version }}/triqs-{{ version }}.tar.gz
-  sha256: 8296979a57b4cf21df6eb8cffbae77b0acd0b0c955393a08e89fb255f75a4af7
+  sha256: 21239fb42ba73f84a77b63abce84c0d2b9162277233d5839aaf39e22e1be8128
 
 build:
   number: 0
-  skip: True  # [win or py>30]
+  skip: True  # [win or py<30]
   merge_build_host: True
 
 requirements:
@@ -29,10 +29,9 @@ requirements:
     - gmp
     - hdf5
     - hdf5 * {{ mpi_prefix }}_*
-    - h5py
     - mako
     - mpi4py
-    - numpy  1.14
+    - numpy
     - {{ mpi }}
     - python
     - scipy
@@ -47,7 +46,6 @@ requirements:
     - gmp
     - hdf5
     - hdf5 * {{ mpi_prefix }}_*
-    - h5py
     - mako
     - mpi4py
     - {{ pin_compatible("numpy") }}
@@ -61,7 +59,7 @@ requirements:
 
 test:
   imports:
-    - pytriqs
+    - triqs
 
 about:
   home: https://triqs.github.io
