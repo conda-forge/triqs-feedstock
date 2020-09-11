@@ -7,9 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  #url: https://github.com/TRIQS/triqs/releases/download/{{ version }}/triqs-{{ version }}.tar.gz
-  url: https://github.com/TRIQS/triqs/archive/3.0-rc1.tar.gz
-  sha256: c287593223bdd0ca213f2400ca00d9b5db0214454bb7b1042e545ee0ad317f06
+  url: https://github.com/TRIQS/triqs/releases/download/{{ version }}/triqs-{{ version }}.tar.gz
+  sha256: 21239fb42ba73f84a77b63abce84c0d2b9162277233d5839aaf39e22e1be8128
 
 build:
   number: 0
