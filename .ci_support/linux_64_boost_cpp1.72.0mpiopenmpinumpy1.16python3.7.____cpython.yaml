@@ -44,5 +44,10 @@ python:
 - 3.7.* *_cpython
 target_platform:
 - linux-64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
+- - numpy
+  - python
 zlib:
 - '1.2'
