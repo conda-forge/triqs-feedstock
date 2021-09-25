@@ -1,4 +1,4 @@
-{% set version = "3.0.0" %}
+{% set version = "3.0.1" %}
 
 {% set mpi_prefix = "mpi_" + mpi %}
 
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://github.com/TRIQS/triqs/releases/download/{{ version }}/triqs-{{ version }}.tar.gz
-  sha256: 21239fb42ba73f84a77b63abce84c0d2b9162277233d5839aaf39e22e1be8128
+  sha256: d555a4606c7ea2dde28aa8da056c6cc1ebbdd4e11cdb50b312b8c8f821a3edd2
 
 build:
-  number: 3
-  skip: True  # [win or py<30]
-  merge_build_host: True
+  number: 0
+  skip: true  # [win or py<30]
+  merge_build_host: true
 
 requirements:
   build: []
@@ -67,7 +67,7 @@ about:
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE.txt
-  summary: 'Toolbox for Research on Interacting Quantum Systems'
+  summary: Toolbox for Research on Interacting Quantum Systems
 
 extra:
   recipe-maintainers:
