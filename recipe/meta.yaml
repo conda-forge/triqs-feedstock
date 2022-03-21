@@ -31,6 +31,7 @@ requirements:
     - hdf5
     - hdf5 * {{ mpi_prefix }}_*
     - mako
+    - importlib-metadata # [osx]
     - mpi4py
     - numpy
     - {{ mpi }}
@@ -48,6 +49,7 @@ requirements:
     - hdf5
     - hdf5 * {{ mpi_prefix }}_*
     - mako
+    - importlib-metadata # [osx]
     - mpi4py
     - {{ pin_compatible("numpy") }}
     - {{ mpi }}
