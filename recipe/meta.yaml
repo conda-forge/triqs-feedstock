@@ -20,7 +20,7 @@ requirements:
   host:
     - cmake
     - make
-    - clangxx >=8  # [osx]
+    - clangxx >=13  # [osx]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - boost-cpp
