@@ -39,7 +39,7 @@ requirements:
     - scipy
     - libblas
     - liblapack
-    - libclang
+    - libclang >=13
     - zlib
   run:
     - boost-cpp
@@ -56,7 +56,7 @@ requirements:
     - python
     - scipy
     - matplotlib-base
-    - libclang
+    - libclang >=13
     - zlib
     - {{ compiler('cxx') }}
 
