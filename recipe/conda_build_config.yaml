@@ -4,4 +4,4 @@ mpi:
 cxx_compiler:
   - clangxx  # [osx]
 cxx_compiler_version:
-  - '13'
+  - '13'  # [osx]
