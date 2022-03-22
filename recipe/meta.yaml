@@ -33,7 +33,7 @@ requirements:
     - hdf5
     - hdf5 * {{ mpi_prefix }}_*
     - mako
-    - importlib-metadata  # [osx]
+    - importlib-metadata  # [py<38]
     - mpi4py
     - numpy
     - {{ mpi }}
