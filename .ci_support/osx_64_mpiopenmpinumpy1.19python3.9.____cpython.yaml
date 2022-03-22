@@ -13,7 +13,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '12'
+- '13'
 fftw:
 - '3'
 gmp:
@@ -28,8 +28,12 @@ macos_machine:
 - x86_64-apple-darwin13.4.0
 mpi:
 - openmpi
+mpich:
+- '4'
 numpy:
 - '1.19'
+openmpi:
+- '4'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
