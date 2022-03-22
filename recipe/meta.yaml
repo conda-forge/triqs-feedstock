@@ -20,9 +20,7 @@ requirements:
   host:
     - cmake
     - make
-    - clangxx >=13  # [osx]
-    - clang_osx-64 >=13  # [osx]
-    - clangxx_osx-64 >=13  # [osx]
+    - clangxx  # [osx]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - boost-cpp
@@ -41,7 +39,7 @@ requirements:
     - scipy
     - libblas
     - liblapack
-    - libclang >=13
+    - libclang
     - zlib
   run:
     - boost-cpp
