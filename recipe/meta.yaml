@@ -1,4 +1,4 @@
-{% set version = "3.0.2" %}
+{% set version = "3.1.0" %}
 
 {% set mpi_prefix = "mpi_" + mpi %}
 
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/TRIQS/triqs/releases/download/{{ version }}/triqs-{{ version }}.tar.gz
-  sha256: 0420d214f66436b2652d0bdd17c41e96f72d7eacff636a88c1649f18a585711c
+  sha256: f1f358ec73498bc7ac3ed9665829d8605908f7f7fc876a5c2a01efe37d368f0e
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win or py<30]
   merge_build_host: true
 
@@ -20,7 +20,7 @@ requirements:
   host:
     - cmake
     - make
-    - clangxx >=8  # [osx]
+    - clangxx  # [osx]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - boost-cpp
@@ -31,6 +31,7 @@ requirements:
     - hdf5
     - hdf5 * {{ mpi_prefix }}_*
     - mako
+    - importlib-metadata  # [py<38]
     - mpi4py
     - numpy
     - {{ mpi }}
@@ -48,6 +49,7 @@ requirements:
     - hdf5
     - hdf5 * {{ mpi_prefix }}_*
     - mako
+    - importlib-metadata  # [py<38]
     - mpi4py
     - {{ pin_compatible("numpy") }}
     - {{ mpi }}
