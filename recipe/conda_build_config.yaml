@@ -1,11 +1,7 @@
 mpi:
   - mpich
   - openmpi
-cxx_compiler:
-  - clangxx  # [osx]
-cxx_compiler_version:
-  - '13'  # [osx]
-c_compiler:
-  - clang  # [osx]
 c_compiler_version:
+  - '13'  # [osx]
+cxx_compiler_version:
   - '13'  # [osx]
