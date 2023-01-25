@@ -11,7 +11,7 @@ export OMPI_MCA_btl_vader_single_copy_mechanism=none
 mpiexec="mpiexec --allow-run-as-root"
 
 export CXXFLAGS="$CXXFLAGS -D_LIBCPP_DISABLE_AVAILABILITY"
-cmake --debug-find \
+cmake -DHDF5_FIND_DEBUG=ON --debug-find \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DBLAS_LIBRARIES=$PREFIX/lib/libblas${SHLIB_EXT} \
     "-DLAPACK_LIBRARIES=$PREFIX/lib/liblapack${SHLIB_EXT};$PREFIX/lib/libblas${SHLIB_EXT}" \
