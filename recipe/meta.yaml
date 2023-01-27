@@ -13,17 +13,16 @@ source:
 build:
   number: 4
   skip: true  # [win or py<30]
-  merge_build_host: true
 
 requirements:
-  host:
-    - cmake
+  build:
     - make
-    - clangxx  # [osx]
+    - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - clangxx  # [osx]
+  host:
     - boost-cpp
-
     - fftw
     - fftw * {{ mpi_prefix }}_*
     - gmp
