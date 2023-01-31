@@ -19,6 +19,8 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
+    - scipy                                  # [build_platform != target_platform]
+    - mako                                   # [build_platform != target_platform]
     - make
     - cmake
     - {{ compiler('c') }}
