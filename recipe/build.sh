@@ -18,5 +18,9 @@ cmake ${CMAKE_ARGS} \
     ..
 
 make -j${CPU_COUNT} VERBOSE=1
-CTEST_OUTPUT_ON_FAILURE=1 ctest
+
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+  CTEST_OUTPUT_ON_FAILURE=1 ctest
+fi
+
 make install
