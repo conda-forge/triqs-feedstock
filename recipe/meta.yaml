@@ -25,6 +25,7 @@ requirements:
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ mpi }}
     - clangxx  # [osx]
   host:
     - boost-cpp
