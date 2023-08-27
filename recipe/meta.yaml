@@ -11,21 +11,15 @@ source:
   sha256: cf4f6064ea962fc088e0c2833bf7c4e52f4c827ea331bf3c57d1c9303649042b
 
 build:
-  number: 6
+  number: 7
   skip: true  # [win or py<30]
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
-    - scipy                                  # [build_platform != target_platform]
-    - mako                                   # [build_platform != target_platform]
     - make
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ mpi }}
     - clangxx  # [osx]
   host:
     - boost-cpp
