@@ -3,6 +3,11 @@
 mkdir build
 cd build
 
+# Cross-compile with openmpi
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "1" ]]; then
+  export OPAL_PREFIX="$PREFIX"
+fi
+
 # Openmpi Specific environment setup - Cf. https://github.com/conda-forge/libnetcdf-feedstock/pull/80
 export OMPI_MCA_btl=self,tcp
 export OMPI_MCA_plm=isolated
