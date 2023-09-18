@@ -18,6 +18,11 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
         SHORT_CONFIG: linux_64_mpimpichnumpy1.22python3.8.____cpython
+      linux_64_mpimpichnumpy1.22python3.9.____73_pypy:
+        CONFIG: linux_64_mpimpichnumpy1.22python3.9.____73_pypy
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        SHORT_CONFIG: linux_64_mpimpichnumpy1.22python3.9.____73_pypy
       linux_64_mpimpichnumpy1.22python3.9.____cpython:
         CONFIG: linux_64_mpimpichnumpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -38,6 +43,11 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
         SHORT_CONFIG: linux_64_mpiopenmpinumpy1.22python3_he080c96e23
+      linux_64_mpiopenmpinumpy1.22python3.9.____73_pypy:
+        CONFIG: linux_64_mpiopenmpinumpy1.22python3.9.____73_pypy
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        SHORT_CONFIG: linux_64_mpiopenmpinumpy1.22python3_ha3cf8f0152
       linux_64_mpiopenmpinumpy1.22python3.9.____cpython:
         CONFIG: linux_64_mpiopenmpinumpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
