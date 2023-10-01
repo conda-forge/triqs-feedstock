@@ -27,7 +27,7 @@ requirements:
     - {{ mpi }}                              # [mpi == 'openmpi' and build_platform != target_platform]
     - clangxx  # [osx]
   host:
-    - libboost-devel
+    - libboost-headers
     - fftw
     - fftw * {{ mpi_prefix }}_*
     - gmp
