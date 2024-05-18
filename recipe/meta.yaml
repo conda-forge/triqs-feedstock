@@ -11,7 +11,7 @@ source:
   sha256: f16103c6f7b68cd412cfb309f22f9ee4d379d794518432c0d514956a39ea05cb
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py<30]
 
 requirements:
@@ -23,6 +23,7 @@ requirements:
     - make
     - cmake
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - {{ mpi }}                              # [mpi == 'openmpi' and build_platform != target_platform]
     - clangxx  # [osx]
@@ -53,7 +54,6 @@ requirements:
     - mako
     - importlib-metadata  # [py<38]
     - mpi4py
-    - {{ pin_compatible("numpy") }}
     - {{ mpi }}
     - python
     - scipy
