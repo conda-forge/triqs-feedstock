@@ -24,6 +24,7 @@ requirements:
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - {{ mpi }}                              # [mpi == 'openmpi' and build_platform != target_platform]
     - clangxx  # [osx]
   host:
