@@ -17,7 +17,7 @@ mpiexec="mpiexec --allow-run-as-root"
 
 export CXXFLAGS="$CXXFLAGS -D_LIBCPP_DISABLE_AVAILABILITY"
 cmake ${CMAKE_ARGS} \
-    -DPYTHON_EXECUTABLE=$PREFIX/bin/python \
+    -DPython_ROOT_DIR=$PREFIX \
     -DLIBCLANG_LOCATION=$PREFIX/lib \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DBLAS_LIBRARIES=$PREFIX/lib/libblas${SHLIB_EXT} \
