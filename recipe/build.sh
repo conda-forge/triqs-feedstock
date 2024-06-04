@@ -24,7 +24,7 @@ cmake ${CMAKE_ARGS} \
     "-DLAPACK_LIBRARIES=$PREFIX/lib/liblapack${SHLIB_EXT};$PREFIX/lib/libblas${SHLIB_EXT}" \
     .. || cat CMakeFiles/CMakeError.log
 
-make -j${CPU_COUNT} VERBOSE=1
+make -j1 VERBOSE=1
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
   CTEST_OUTPUT_ON_FAILURE=1 ctest
