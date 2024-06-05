@@ -20,7 +20,7 @@ cmake ${CMAKE_ARGS} \
 make -j1 VERBOSE=1
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-  CTEST_OUTPUT_ON_FAILURE=1 ctest -V
+  CTEST_OUTPUT_ON_FAILURE=1 ctest -VV
 fi
 
 make install
