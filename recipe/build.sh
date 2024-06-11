@@ -8,13 +8,6 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "1" ]]; then
   export OPAL_PREFIX="$PREFIX"
 fi
 
-# Openmpi Specific environment setup - Cf. https://github.com/conda-forge/libnetcdf-feedstock/pull/80
-export OMPI_MCA_btl=self,tcp
-export OMPI_MCA_plm=isolated
-export OMPI_MCA_rmaps_base_oversubscribe=yes
-export OMPI_MCA_btl_vader_single_copy_mechanism=none
-mpiexec="mpiexec --allow-run-as-root"
-
 export CXXFLAGS="$CXXFLAGS -D_LIBCPP_DISABLE_AVAILABILITY"
 cmake ${CMAKE_ARGS} \
     -DPython_ROOT_DIR=$PREFIX \
