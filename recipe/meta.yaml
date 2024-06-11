@@ -11,7 +11,7 @@ source:
   sha256: 794bb02ed7e98498a93219831b270123ea0c893cc272ec9bb98217354b8f1b8d
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win or py<30 or (osx and x86_64)]
 
 requirements:
@@ -54,7 +54,6 @@ requirements:
     - mako
     - importlib-metadata  # [py<38]
     - mpi4py
-    - {{ pin_compatible("numpy") }}
     - {{ mpi }}
     - python
     - scipy
