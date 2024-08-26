@@ -26,6 +26,8 @@ hdf5:
 - 1.14.3
 libblas:
 - 3.9 *netlib
+libboost_headers:
+- '1.86'
 liblapack:
 - 3.9 *netlib
 macos_machine:
@@ -52,4 +54,4 @@ zip_keys:
 - - python
   - numpy
 zlib:
-- '1.2'
+- '1'
