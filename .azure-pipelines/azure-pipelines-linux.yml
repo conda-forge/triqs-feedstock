@@ -28,11 +28,11 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
         SHORT_CONFIG: linux_64_mpimpichpython3.13.____cp313
-      linux_64_mpimpichpython3.9.____cpython:
-        CONFIG: linux_64_mpimpichpython3.9.____cpython
+      linux_64_mpimpichpython3.14.____cp314:
+        CONFIG: linux_64_mpimpichpython3.14.____cp314
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-        SHORT_CONFIG: linux_64_mpimpichpython3.9.____cpython
+        SHORT_CONFIG: linux_64_mpimpichpython3.14.____cp314
       linux_64_mpiopenmpipython3.10.____cpython:
         CONFIG: linux_64_mpiopenmpipython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -53,11 +53,11 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
         SHORT_CONFIG: linux_64_mpiopenmpipython3.13.____cp313
-      linux_64_mpiopenmpipython3.9.____cpython:
-        CONFIG: linux_64_mpiopenmpipython3.9.____cpython
+      linux_64_mpiopenmpipython3.14.____cp314:
+        CONFIG: linux_64_mpiopenmpipython3.14.____cp314
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-        SHORT_CONFIG: linux_64_mpiopenmpipython3.9.____cpython
+        SHORT_CONFIG: linux_64_mpiopenmpipython3.14.____cp314
   timeoutInMinutes: 360
   variables: {}
 
