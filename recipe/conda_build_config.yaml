@@ -3,5 +3,7 @@ mpi:
   - openmpi
 c_compiler_version:
   - '16'  # [osx]
+  - '13'  # [linux]
 cxx_compiler_version:
   - '16'  # [osx]
+  - '13'  # [linux]
