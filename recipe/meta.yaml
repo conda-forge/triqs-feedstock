@@ -1,4 +1,4 @@
-{% set version = "3.3.1" %}
+{% set version = "3.3.2" %}
 
 {% set mpi_prefix = "mpi_" + mpi %}
 
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/TRIQS/triqs/releases/download/{{ version }}/triqs-{{ version }}.tar.gz
-  sha256: 740efb57c9af39f4086115f8167a55833e84558261e0564c7179d8c17f911539
+  sha256: 73cff4637e0426274d183052f7d1ba405d7bf1be503c79a594730f1cea88b808
 
 build:
-  number: 8
+  number: 0
   skip: true  # [win or py<30]
 
 requirements:
