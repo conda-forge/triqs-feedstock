@@ -13,6 +13,11 @@ source:
 build:
   number: 0
   skip: true  # [win or py<30]
+  # triqs only uses Boost::headers (header-only); libboost-devel is needed in
+  # host so find_package(Boost) resolves via BoostConfig.cmake under CMP0167,
+  # but its run_exports pin on the compiled libboost lib is not actually needed.
+  ignore_run_exports:
+    - libboost
 
 requirements:
   build:
@@ -28,7 +33,7 @@ requirements:
     - {{ mpi }}                              # [mpi == 'openmpi' and build_platform != target_platform]
     - clangxx  # [osx]
   host:
-    - libboost-headers
+    - libboost-devel
     - fftw
     - fftw * {{ mpi_prefix }}_*
     - gmp
