@@ -6,6 +6,14 @@ cd build
 # Cross-compile with openmpi
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "1" ]]; then
   export OPAL_PREFIX="$PREFIX"
+  # CMake >= 4.1 (policy CMP0190) makes find_package(Python COMPONENTS Interpreter
+  # Development ...) refuse to search at all while cross-compiling unless
+  # CMAKE_CROSSCOMPILING_EMULATOR is set. conda-forge cross builds use crossenv,
+  # which provides a host-runnable interpreter ($PYTHON) rather than real target-arch
+  # emulation, so a plain `env` passthrough satisfies the check. Same fix as used by
+  # the cppbmad feedstock (other feedstocks affected by CMP0190, e.g. xrootd, gdal,
+  # freud, instead patch their CMakeLists.txt to set cmake_policy(SET CMP0190 OLD)).
+  CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_CROSSCOMPILING_EMULATOR=env -DPython_EXECUTABLE=$PYTHON"
 fi
 
 export CXXFLAGS="$CXXFLAGS -D_LIBCPP_DISABLE_AVAILABILITY"
