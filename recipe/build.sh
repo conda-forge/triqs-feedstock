@@ -35,7 +35,7 @@ make install
 
 # Set correct paths in various file
 py_version=$( python -c "import sys; print('{}.{}'.format(sys.version_info[0], sys.version_info[1]))" )
-for file in bin/triqs++ bin/nda++ lib/cmake/triqs/TRIQSConfig.cmake lib/cmake/Cpp2Py/Cpp2PyTargets.cmake \
+for file in lib/cmake/triqs/TRIQSConfig.cmake lib/cmake/Cpp2Py/Cpp2PyTargets.cmake \
     lib/cmake/Cpp2Py/Cpp2PyConfig.cmake lib/python${py_version}/site-packages/cpp2py/libclang_config.py \
     lib/cmake/mpi/mpi-config.cmake
 do
