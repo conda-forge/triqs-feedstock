@@ -11,7 +11,7 @@ source:
   sha256: 6b09923bf8a950cf1f07c93f5385cfe82c963b2ac04d10eee12045f83e8907da
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py<30]
   # triqs only uses Boost::headers (header-only); libboost-devel is needed in
   # host so find_package(Boost) resolves via BoostConfig.cmake under CMP0167,
@@ -65,7 +65,6 @@ requirements:
     - matplotlib-base
     - libclang
     - zlib
-    - {{ compiler('cxx') }}
 
 test:
   imports:

@@ -3,19 +3,6 @@
 mkdir build
 cd build
 
-# Cross-compile with openmpi
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "1" ]]; then
-  export OPAL_PREFIX="$PREFIX"
-  # CMake >= 4.1 (policy CMP0190) makes find_package(Python COMPONENTS Interpreter
-  # Development ...) refuse to search at all while cross-compiling unless
-  # CMAKE_CROSSCOMPILING_EMULATOR is set. conda-forge cross builds use crossenv,
-  # which provides a host-runnable interpreter ($PYTHON) rather than real target-arch
-  # emulation, so a plain `env` passthrough satisfies the check. Same fix as used by
-  # the cppbmad feedstock (other feedstocks affected by CMP0190, e.g. xrootd, gdal,
-  # freud, instead patch their CMakeLists.txt to set cmake_policy(SET CMP0190 OLD)).
-  CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_CROSSCOMPILING_EMULATOR=env -DPython_EXECUTABLE=$PYTHON"
-fi
-
 export CXXFLAGS="$CXXFLAGS -D_LIBCPP_DISABLE_AVAILABILITY"
 cmake ${CMAKE_ARGS} \
     -DPython_ROOT_DIR=$PREFIX \
@@ -27,9 +14,7 @@ cmake ${CMAKE_ARGS} \
 
 make -j1 VERBOSE=1
 
-if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-  CTEST_OUTPUT_ON_FAILURE=1 ctest -VV
-fi
+CTEST_OUTPUT_ON_FAILURE=1 ctest -VV
 
 make install
 
@@ -39,6 +24,7 @@ for file in lib/cmake/triqs/TRIQSConfig.cmake lib/cmake/Cpp2Py/Cpp2PyTargets.cma
     lib/cmake/Cpp2Py/Cpp2PyConfig.cmake lib/python${py_version}/site-packages/cpp2py/libclang_config.py \
     lib/cmake/mpi/mpi-config.cmake
 do
+  [[ -f "$PREFIX/$file" ]] || continue
   sed "s|$BUILD_PREFIX/venv|$PREFIX|g" $PREFIX/$file > tmp_file
   sed "s|$BUILD_PREFIX|$PREFIX|g" tmp_file > $PREFIX/$file
 done
