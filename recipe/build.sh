@@ -5,6 +5,7 @@ cd build
 
 export CXXFLAGS="$CXXFLAGS -D_LIBCPP_DISABLE_AVAILABILITY"
 cmake ${CMAKE_ARGS} \
+    -DBuild_Deps=IfNotFound \
     -DPython_ROOT_DIR=$PREFIX \
     -DLIBCLANG_LOCATION=$PREFIX/lib \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \

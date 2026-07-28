@@ -1,4 +1,4 @@
-{% set version = "4.0.0" %}
+{% set version = "4.0.1" %}
 
 {% set mpi_prefix = "mpi_" + mpi %}
 
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/TRIQS/triqs/releases/download/{{ version }}/triqs-{{ version }}.tar.gz
-  sha256: 6b09923bf8a950cf1f07c93f5385cfe82c963b2ac04d10eee12045f83e8907da
+  sha256: e27ea2c09e6eb22a580b85e3d6f6c3f93c985e9c633646f1a265ef81612c2b9e
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win or py<30]
   # triqs only uses Boost::headers (header-only); libboost-devel is needed in
   # host so find_package(Boost) resolves via BoostConfig.cmake under CMP0167,
@@ -36,6 +36,7 @@ requirements:
     - libboost-devel
     - fftw
     - fftw * {{ mpi_prefix }}_*
+    - fmt
     - gmp
     - hdf5
     - hdf5 * {{ mpi_prefix }}_*
