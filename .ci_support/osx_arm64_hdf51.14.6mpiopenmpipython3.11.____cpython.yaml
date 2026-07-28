@@ -20,6 +20,8 @@ cxx_compiler_version:
 - '19'
 fftw:
 - '3'
+fmt:
+- '12.1'
 gmp:
 - '6'
 hdf5:
